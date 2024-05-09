@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>drag and drop</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="card-1" draggable="true"></div>
+    <div class="card-2"></div>
+
+    <script>
+
+//       let  card1 = document.querySelector('.card-1');
+//       let  card2 = document.querySelector('.card-2');
+
+// //       card1.addEventListener('dragstart', () => {
+// //   console.log('drag started')
+// //     card1.style.background='red'
+// //     card2.style.border='2px dotted blue'
+// //   // alert('your name is satish')
+// // })
+// // card1.addEventListener('dragend', () => {
+// //   console.log('drag end')
+// // })
+// card2.addEventListener('dragleave', () => {
+//   console.log('leaving card')
+
+//   // let div=document.createElement('div')
+//   // div.className='card-1'
+//   // card2.append(div)
+
+//   //    card1.style.background = 'blue'
+//   //     card2.style.border = '2px solid black'
+//   //     card2.style.background='white'
+//   // alert('your name is satish')
+// })
+// card2.addEventListener('dragenter', () => {
+//   console.log('card 1 is entering on card 2')
+// })
+
+// card2.addEventListener('dragover', (e) => {
+//   e.preventDefault()
+//   console.log('hovering on card 2')
+//   //   card2.style.background='red'
+//   // alert('your name is satish')
+// })
+
+// card2.addEventListener('drop', () => {
+//   console.log('dropped on card2')
+// })
+
+
+
+
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('dragstart', handleDragStart);
+    card.addEventListener('dragover', handleDragOver);
+    card.addEventListener('drop', handleDrop);
+  });
+
+  function handleDragStart(event) {
+    event.dataTransfer.setData('text/plain', event.target.id);
+  }
+
+  function handleDragOver(event) {
+    event.preventDefault();
+  }
+
+  function handleDrop(event) {
+    event.preventDefault();
+    const draggedId = event.dataTransfer.getData('text/plain');
+    const draggedElement = document.getElementById(draggedId);
+    event.target.appendChild(draggedElement);
+  }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: black;
+        }
+        .home {
+    position: absolute;
+    width: 10%;
+    display: flex; /* Add this line to enable flex properties */
+    justify-content: space-between;
+    height: 100vh;
+     background: url("IMG_20240218_125843_272.webp");
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+    </style>
+</head>
+<body>
+    <section class="home">
+
+    </section>
+    
+</body>
+</html>  {% for stat in stats %}
+<div class="cards">
+    <h1>{{ stat.count }}</h1>
+    <p>{{ stat.category }}</p>
+</div>
+{% endfor %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card div {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.card li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+    </style>
+
+</head>
+<body>
+    <section class="card">
+  
+    </section>
+    <script>
+        let arr =["a", "b", "c","e","f","g","h","i","j","k","l","m"];
+        let card = document.querySelector('.card');
+        arr.forEach((item) => {
+            let div = document.createElement('div');
+        let  ul =document.createElement("ul");
+        let  li = document.createElement("li")
+        li.textContent = item;
+        ul.appendChild(li);
+         div.appendChild(ul);
+         card.appendChild(div);  
+
+          
+        });
+    </script>
+</body>
+</html>      

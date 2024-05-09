@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <h1>Multiple Timer App</h1>
+            <label>Hours</label>
+            <input type="number" name="number" placeholder="" id="hourInput"/>
+            <label>Minutes</label>
+            <input type="number" name="number" placeholder="" id="minuteInput"/>
+            <label>Seconds</label>
+            <input type="number" name="number" placeholder="" id="secondInput"/>
+            <input type="submit" id="startTimer">
+        </div>
+        <div id="countdownDisplay"></div>
+    </div>
+    <script>
+        document.getElementById('startTimer').addEventListener('click', function () {
+            // Get input values
+            var hours = parseInt(document.getElementById('hourInput').value) || 0;
+            var minutes = parseInt(document.getElementById('minuteInput').value) || 0;
+            var seconds = parseInt(document.getElementById('secondInput').value) || 0;
+
+            // Calculate total seconds
+            var totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+            // Start the countdown
+            startCountdown(totalSeconds);
+        });
+
+        function startCountdown(totalSeconds) {
+            var countdownDisplay = document.getElementById('countdownDisplay');
+            
+            var countdownInterval = setInterval(function () {
+                if (totalSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownDisplay.textContent = "Time's up!";
+                } else {
+                    var hours = Math.floor(totalSeconds / 3600);
+                    var minutes = Math.floor((totalSeconds % 3600) / 60);
+                    var seconds = totalSeconds % 60;
+
+                    countdownDisplay.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+
+                    totalSeconds--;
+                }
+            }, 1000);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? '0' + time : time;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="search" id="search" />
+    <button id="btn">clickme</button>
+    <script>
+      let count = 0;
+    //   let search = document.getElementById("search"); // Declare and select the input element
+    
+      search.addEventListener("input", () => {
+        debounce(() => {
+          count++;
+          console.log("SEARCH VALUE IS ", search.value);
+          console.log("COUNT IS", count);
+        }, 5000);
+      });
+    
+      let timer = 0;
+      function debounce(callback, delay) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          callback();
+        }, delay);
+      }
+    </script>
+    
+        
+    </script>
+</body>
+</html>

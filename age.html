@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dob-container{
+width:100%;
+height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:#15b5ea;
+    flex-direction:column;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    background:#5f82a0;
+    padding:1rem;
+    border-radius:1rem;
+    gap:1rem;
+    box-shadow:5px 5px 2px rgba(0,0,0,0.3)
+}
+.input-container{
+    display: flex;
+    flex-direction:column;
+    gap:.5rem;
+}
+
+h1{
+    text-transform:capitalize;
+    text-align:center;
+}
+
+input{
+    /* background:none; */
+    padding:10px;
+    border-radius:5px;
+    border:none;
+    outline:none;
+}
+
+button{
+    padding:5px;
+    border-radius:5px;
+    border:transparent;
+    background:#23a4dc;
+}
+
+.result{
+    margin-top:30px;
+    font-size:2rem;
+    font-weight:700;
+    /* color:white; */
+    
+
+}
+
+</style>
+<body>
+
+   
+<section class="dob-container">
+    <form action="">
+        <h1>age Calculator</h1>
+        <div class="input-container">
+ <label for="dob">Date of birth</label>
+    <input type="date" id="dob" class="dob">
+        </div>
+   <div class="input-container">
+ <label for="currentDate">Current Date</label>
+    <input type="date"  id="currentDate">
+   </div>
+   
+    <button type="button" onclick="calcAge()">Submit</button>
+</form>
+
+
+<div class="result">
+    
+</div>
+
+</section>
+
+
+
+    
+
+<script >
+function calcAge(){
+  
+    const dob = document.querySelector('#dob')//reading the dob input
+  // console.log(dob.value)
+  let dobValue = dob.value//getting the value of dob
+  console.log(dobValue)
+
+  let currentDate = document.querySelector('#currentDate')//reading input of current date
+  // console.log(currentDate)
+  let currentDateValue = currentDate.value//getting the vlaue of current date
+  console.log(currentDateValue)
+
+  const getDob = new Date(dobValue)//get deatils of dob
+  let dobYear = getDob.getFullYear()//get year of dob
+  console.log(dobYear)
+  let dobMonth = getDob.getMonth()//get month of dob
+  console.log(dobMonth)
+  let dobDate = getDob.getDate()//get date of dob
+  console.log(dobDate)
+
+  // console.log(getDob)
+  const getCurrentDate = new Date(currentDateValue)//get details of current date
+  let currentYear = getCurrentDate.getFullYear()
+  let currentMonth = getCurrentDate.getMonth()
+  let currentDay = getCurrentDate.getDate()
+
+  console.log(currentYear)
+  console.log(currentMonth)
+  console.log(currentDay)
+
+  let yearGap = currentYear - dobYear
+
+  let monthGap
+  let dateGap
+  if (currentMonth >= dobMonth) {
+    monthGap = currentMonth - dobMonth
+  } else {
+    yearGap--
+    monthGap = 12 + currentMonth - dobMonth
+  }
+
+  if (currentDay >= dobDate) {
+    dateGap = currentDay - dobDate
+  } else {
+    monthGap--
+    dateGap = 31 + currentDay - dobDate
+    if(monthGap<=0){
+        monthGap=11;
+        yearGap--;
+    }
+  }
+
+// console.log(yearGap)
+// console.log(monthGap)
+// console.log(dateGap)
+//creating a object of age gap
+let ageGap={
+year:yearGap,
+month:monthGap,
+date:dateGap
+
+}
+console.log(ageGap)
+
+let result=document.querySelector('.result')//reading the result container
+console.log(result)
+
+result.innerHTML=`You are ${ageGap.year} years and ${ageGap.month} months and ${ageGap.date} days old  `
+}
+
+</script>
+
+
+    </script>
+</body>
+</html>

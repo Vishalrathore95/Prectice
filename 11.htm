@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+          width: 100px;
+          height: 100px;
+          background-color: #ccc;
+          margin: 10px;
+        }
+      </style>
+</head>
+<body>
+   
+      
+      <div class="card" id="card1" draggable="true"></div>
+      <div class="card" id="card2"></div>
+      
+      <script>
+        const cards = document.querySelectorAll('.card');
+      
+        cards.forEach(card => {
+          card.addEventListener('dragstart', handleDragStart);
+          card.addEventListener('dragover', handleDragOver);
+          card.addEventListener('drop', handleDrop);
+        });
+      
+        function handleDragStart(event) {
+          event.dataTransfer.setData('text/plain', event.target.id);
+        }
+      
+        function handleDragOver(event) {
+          event.preventDefault();
+        }
+      
+        function handleDrop(event) {
+          event.preventDefault();
+          const draggedId = event.dataTransfer.getData('text/plain');
+          const draggedElement = document.getElementById(draggedId);
+          event.target.appendChild(draggedElement);
+        }
+      </script>
+      
+</body>
+</html>

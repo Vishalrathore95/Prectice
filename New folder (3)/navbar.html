@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-center {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-container h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.head-container span {
+    color: #ff8c00; /* Orange color for the span */
+}
+
+.menu {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;   /* Add this to ensure the icon is displayed properly */
+    align-items: center; /* Add this to center the icon vertically */
+}
+
+.pages {
+    list-style: none;
+    display: flex;
+}
+
+.pages li  a{
+    margin-right: 1rem;
+    color: white;
+}
+
+
+.social-icons {
+    list-style: none;
+    display: flex;
+ 
+}
+
+.social-icon {
+    margin-right: 1rem;
+    
+}
+.social-icon i {
+    color: white; 
+}
+
+
+@media (max-width: 768px) {
+    .head-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .menu {
+        font-size: 1.2rem;
+    }
+
+    .pages {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pages.show {
+        display: flex;
+      
+    }
+
+    .pages li {
+        margin: 0.5rem 0;
+        color: white; 
+    }
+
+    .social-icons {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .social-icon {
+        margin: 0.5rem 0;
+    }
+
+    .social-icon i {
+        color: white;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-center">
+            <div class="head-container">
+                <h2>vishal <span>rathore</span></h2>
+                <button class="menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+
+            <ul class="pages">
+                <!-- Page links will be added dynamically using JavaScript -->
+            </ul>
+
+            <ul class="social-icons">
+                <!-- Social icons will be added dynamically using JavaScript -->
+                <li class="social-icon"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="social-icon"><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="social-icon"><a href=""><i class="fa-brands fa-github"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <script>
+       let pageObj = [
+    {
+        page: 'home',
+        link: 'home.html'
+    },
+    {
+        page: 'about',
+        link: 'about.html'
+    },
+    {
+        page: 'contact',
+        link: 'contact.html'
+    }
+];
+
+let socialObj = [
+    {
+        href: '#',
+        icon: '<i class="fab fa-instagram"></i>'
+    },
+    {
+        href: '#',
+        icon: '<i class="fab fa-twitter"></i>'
+    },
+    {
+        href: '#',
+        icon: '<i class="fab fa-github"></i>'
+    }
+];
+
+let pageContainer = document.querySelector('.pages');
+let pageArr = pageObj.map(item => {
+    return `<li class="page"><a href=${item.link}>${item.page}</a></li>`;
+});
+pageContainer.innerHTML = pageArr.join('');
+
+let btn = document.querySelector('.menu');
+
+btn.addEventListener('click', () => {
+    let pages = document.querySelector('.pages');
+    pages.classList.toggle('show');
+    let icons = document.querySelector('.social-icons');
+    icons.classList.toggle('show');
+});
+
+let socialContainer = document.querySelector('.social-icons');
+let socialArr = socialObj.map(item => {
+    return `<li class="social-icon"><a href=${item.href}>${item.icon}</a></li>`;
+});
+
+socialContainer.innerHTML = socialArr.join('');
+    </script>
+</body>
+</html>

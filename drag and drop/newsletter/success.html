@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10%;
+
+            
+        }
+        .container img{
+            float: left;
+        }
+        button{
+            width: 200px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+      <div class="container">
+        <img src="assets/images/icon-success.svg">
+   <h1>Thanks for subscribing!</h1> 
+      <p>A confirmation email has been sent to<b> ash@loremcompany.com.</b>
+      Please open it and click the button inside to confirm your subscription.</p>
+    <button onclick="dismissMessage()">  Dismiss message</button> </div> 
+    <script>
+            function dismissMessage() {
+    
+    window.location.href = "index.html";
+}
+    </script>
+</body>     
+</html>

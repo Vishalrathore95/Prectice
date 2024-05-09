@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+</head>
+<body>
+    <nav>
+     <label class="logo">DesignX</label>
+     <ul>
+<li><a href="#"  class="active">Home</a> </li>
+<li><a href="#">About</a></li>
+<li><a href="#">services</a></li>
+<li><a href="#">contact</a></li>
+<li><a href="#">menu</a></li>
+     </ul>
+     <label id="icon">
+        <i class="fa-solid fa-bars"></i>
+     </label>
+     </nav>
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon = document.getElementById('icon');
+            const navUl = document.querySelector('nav ul');
+    
+            icon.addEventListener('click', function () {
+                navUl.classList.toggle('show');
+            });
+    
+            // Close the menu when a link is clicked
+            navUl.addEventListener('click', function () {
+                navUl.classList.remove('show');
+            });
+        });
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <h1>Multiple Timer App</h1>
+            <label>Hours</label>
+            <input type="number" name="number" placeholder="" id="hourInput"/>
+            <label>Minutes</label>
+            <input type="number" name="number" placeholder="" id="minuteInput"/>
+            <label>Seconds</label>
+            <input type="number" name="number" placeholder="" id="secondInput"/>
+            <input type="submit" id="startTimer">
+        </div>
+        <div id="countdownDisplay"></div>
+
+        <script>
+    document.getElementById("startTimer").addEventListener("click", function(){
+        var hours = document.getElementById("hourInput").value || 0;
+        var minutes = document.getElementById("minuteInput").value || 0;
+        var seconds = document.getElementById("secondInput").value || 0;
+        var totalseconds = hours * 3600 + minutes * 60 + seconds;
+        start(totalseconds)
+    });
+    function start(totalseconds){
+        var countdownDisplay =document.getElementById("countdownDisplay");
+        var timer = setInterval(function(){
+            if(totalseconds<=0){
+                clearInterval(timer);
+                countdownDisplay.textContent = "Time's Up!";
+            }else{
+
+                var hours=Math.floor(totalseconds/3600);
+                var minutes=Math.floor((totalseconds%3600)/60);
+                var seconds= Math.floor(totalseconds%60);
+                countdownDisplay.textContent = formatime(hours)+":" + formattime(minutes)+":" + formatime(seconds);
+                totalseconds --;
+            }
+        })
+    }
+    function formatime(time){
+        return time<10 ? "0"+time : time;
+
+    }
+
+
+        
+         
+        </script>
+    </div>
+</body>
+</html>

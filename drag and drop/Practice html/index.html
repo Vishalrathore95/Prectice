@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: #2e4436;
+        }
+
+        .card {
+            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            height: 400px;
+            margin: 10% 0 0 40%;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button onclick="addCard()"><i class="fas fa-plus"></i></button>
+    </div>
+
+    <script>
+        function addCard() {
+            let container = document.querySelector(".container");
+
+            let card = document.createElement("div");
+            let header = document.createElement("header");
+            let img = document.createElement("img");
+            let footer = document.createElement("footer");
+            let button = document.createElement("button");
+            let close = document.createElement("i");
+            close.className = "fas fa-times";
+            button.className = "fas fa-times";
+            footer.className = "footer";
+            header.className = "header";
+            img.className = "img";
+            img.src = "https://media.istockphoto.com/id/168813404/photo/sweet-muffin-cake.jpg?s=612x612&w=0&k=20&c=T3MyOnnM5TCqjw53H3cR6AJVZGDmB_svzZNhVmmc7JI=";
+            header.appendChild(img);
+            footer.appendChild(button);
+            footer.appendChild(close);
+            card.appendChild(header);
+            card.appendChild(footer);
+            container.appendChild(card);
+            card.className = "card";
+            // card.style.width = "300px";
+            // card.style.height = "400px";
+            // card.style.margin = "10% 0 0 40%";
+            // card.style.justifyContent = "center";
+            button.onclick = function() {
+                card.remove();
+            }
+            card.className = "card";
+
+    
+            container.appendChild(card);
+        }
+    </script>
+</body>
+</html>

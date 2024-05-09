@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grandParent {
+        width: 800px;
+        padding: 3rem;
+        background: yellow;
+      }
+      #parents {
+        width: 600px;
+        padding: 3rem;
+        background: green;
+        margin: 0 auto;
+      }
+      #child {
+        width: 400px;
+        padding: 3rem;
+        background: red;
+        margin: 0 auto;
+      }
+      #main {
+        width:1000px;
+        margin: 0 auto;
+        padding: 3rem;
+        background-color: tomato;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="grandParent" class="a b c">
+        <div id="parents">
+          <div id="child"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+function sayHi(e) {
+    e.stopPropagation()
+ console.log('hi every one')
+}
+function sayNamaste(e) {
+  console.log(e.target)
+    e.stopPropagation()
+  console.log('namaste sabko')
+}
+function sayBonjour(e) {
+  console.log(e)
+  e.stopPropagation()
+  console.log(e.target)
+  console.log('bonjour tout le monde')
+}
+
+function sayArigato(e){
+  console.log(e.target)
+    e.stopPropagation()
+  console.log('arigato everyone')
+}
+console.log(grandParent)
+console.log(parents)
+console.log(child)
+main.addEventListener('click',sayArigato)
+grandParent.addEventListener('click', sayNamaste)
+parents.addEventListener('click', sayHi)
+child.addEventListener('click', sayBonjour)
+
+// capturing
+// Target hit
+// bubbling
+console.log(grandParent.classList)
+console.log(grandParent.className)
+// grandParent.className='d'
+grandParent.classList.add('d')
+console.log(grandParent.className)
+
+    </script>
+  </body>
+</html>

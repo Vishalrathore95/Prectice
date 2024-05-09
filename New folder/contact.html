@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title of the Page -->
+    <title>{{title}}</title>
+
+    <!-- Link CSS Style Sheet -->
+    <link rel="stylesheet" href="/static/new.css" />
+   
+  </head>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <body>
+    <!-- Here Header Start -->
+    <header>
+      <!-- Logo -->
+      <div class="logo"><img src="/static/logo.png" alt="Logo" /></div>
+
+      <ul class="utility">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Appointment</a> </li>
+      
+       
+      </ul>
+    </header>
+    <main>
+        <!-- Appointment Box -->
+        <div class="appointmentBox">
+            <form>
+                <!-- Form Heading -->
+                <h1 class="heading">Appointment Request Form</h1>
+
+                <!-- Take Name Input -->
+                <label>Name</label><br />
+                <input type="text" placeholder="Enter your name" required /><br />
+
+                <!-- Take Email Input -->
+                <label>Email</label><br />
+                <input type="email" placeholder="Enter your email" required /><br />
+
+                <!-- Take Phone Number Input -->
+                <label>Phone Number</label><br />
+                <input type="tel" placeholder="Enter your phone number" required /><br />
+
+                <!-- Select Doctor -->
+                <label>Select Doctor</label><br />
+                <select>
+                  <option value="dr-smith">Dr. Smith</option>
+                  <option value="dr-jones">Dr. Jones</option>
+                  <option value="dr-wilson">Dr. Wilson</option>
+                  <option value="dr-miller">Dr. Miller</option>
+                  <option value="dr-anderson">Dr. Anderson</option>
+                  <option value="dr-brown">Dr. Brown</option>
+                  <option value="dr-davis">Dr. Davis</option>
+                  <option value="dr-evans">Dr. Evans</option>
+                  <option value="dr-garcia">Dr. Garcia</option>
+                  <option value="dr-hall">Dr. Hall</option>
+                  <option value="dr-jackson">Dr. Jackson</option>
+                  <option value="dr-kelly">Dr. Kelly</option>
+                  <option value="dr-lee">Dr. Lee</option>
+                  <option value="dr-martin">Dr. Martin</option>
+                  <option value="dr-nelson">Dr. Nelson</option>
+                  <option value="dr-owens">Dr. Owens</option>
+                  <option value="dr-patel">Dr. Patel</option>
+                  <option value="dr-ross">Dr. Ross</option>
+                  <option value="dr-taylor">Dr. Taylor</option>
+                  <option value="dr-white">Dr. White</option>
+                  <!-- Add more doctor options as needed -->
+                </select><br />
+                
+
+                <!-- Date and Time Input -->
+                <label>Date and Time</label><br />
+                <input type="datetime-local" required /><br />
+
+                <!-- Submit Button -->
+                <button class="btn">Request Appointment</button>
+            </form>
+        </div>
+    </main>
+    <script>
+    document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        // Get form values
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var doctor = document.getElementById("doctor").value;
+        var dateTime = document.getElementById("dateTime").value;
+        
+        // Store form values in sessionStorage
+        sessionStorage.setItem("name", name);
+        sessionStorage.setItem("email", email);
+        sessionStorage.setItem("phone", phone);
+        sessionStorage.setItem("doctor", doctor);
+        sessionStorage.setItem("dateTime", dateTime);
+        
+        // Redirect to the confirmation page
+        window.location.href = "confi.html";
+      });
+    </script>
+</body>
+</html>

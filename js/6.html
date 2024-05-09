@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.logo img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+}
+
+.utility {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.utility li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.utility li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.doctor-card {
+    width: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 10%; /* Make the image circular */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .doctor-card {
+        width: calc(50% - 40px); /* Adjust for smaller screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="/static/logo.png" alt="Logo"></div>
+    <ul class="utility">
+        <li><a href="/index">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Appointment</a></li>
+        <li><a href="/doccard">our Doctor</a> </li>
+        <li><a href="/confirm">View Appointment Detail</a></li>
+        <li><a href="{% url 'logout'%}" class="btn4">Logout</a></li>
+    </ul>
+</header>
+
+<div class="container">
+    <!-- Card 1 -->
+    <div class="doctor-card">
+        <div class="card-header">
+            <h2>Doctor Profile</h2>
+        </div>
+        <div class="card-body">
+            <div class="profile-picture">
+                <!-- Insert profile picture here -->
+                <img src="usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <!-- Insert profile details here -->
+                <p><strong>Username:</strong> JohnDoe</p>
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john@example.com</p>
+                <p><strong>Specialization:</strong> Cardiology</p>
+                <p><strong>Qualification:</strong> MD, PhD</p>
+                <p><strong>Hospital:</strong> HeartCare Hospital</p>
+                <p><strong>Contact:</strong> +1 (123) 456-7890</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Card 2 -->
+    <div class="doctor-card">
+        <div class="card-header">
+            <h2>Doctor Profile</h2>
+        </div>
+        <div class="card-body">
+            <div class="profile-picture">
+                <!-- Insert profile picture here -->
+                <img src="usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <!-- Insert profile details here -->
+                <p><strong>Username:</strong> JohnDoe</p>
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john@example.com</p>
+                <p><strong>Specialization:</strong> Cardiology</p>
+                <p><strong>Qualification:</strong> MD, PhD</p>
+                <p><strong>Hospital:</strong> HeartCare Hospital</p>
+                <p><strong>Contact:</strong> +1 (123) 456-7890</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="doctor-card">
+        <div class="card-header">
+            <h2>Doctor Profile</h2>
+        </div>
+        <div class="card-body">
+            <div class="profile-picture">
+                <!-- Insert profile picture here -->
+                <img src="usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <!-- Insert profile details here -->
+                <p><strong>Username:</strong> JohnDoe</p>
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john@example.com</p>
+                <p><strong>Specialization:</strong> Cardiology</p>
+                <p><strong>Qualification:</strong> MD, PhD</p>
+                <p><strong>Hospital:</strong> HeartCare Hospital</p>
+                <p><strong>Contact:</strong> +1 (123) 456-7890</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="doctor-card">
+        <div class="card-header">
+            <h2>Doctor Profile</h2>
+        </div>
+        <div class="card-body">
+            <div class="profile-picture">
+                <!-- Insert profile picture here -->
+                <img src="usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <!-- Insert profile details here -->
+                <p><strong>Username:</strong> JohnDoe</p>
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john@example.com</p>
+                <p><strong>Specialization:</strong> Cardiology</p>
+                <p><strong>Qualification:</strong> MD, PhD</p>
+                <p><strong>Hospital:</strong> HeartCare Hospital</p>
+                <p><strong>Contact:</strong> +1 (123) 456-7890</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    <div class="doctor-card">
+        <div class="card-header">
+            <h2>Doctor Profile</h2>
+        </div>
+        <div class="card-body">
+            <div class="profile-picture">
+                <!-- Insert profile picture here -->
+                <img src="usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <!-- Insert profile details here -->
+                <p><strong>Username:</strong> JohnDoe</p>
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john@example.com</p>
+                <p><strong>Specialization:</strong> Cardiology</p>
+                <p><strong>Qualification:</strong> MD, PhD</p>
+                <p><strong>Hospital:</strong> HeartCare Hospital</p>
+                <p><strong>Contact:</strong> +1 (123) 456-7890</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="doctor-card">
+        <div class="card-header">
+            <h2>Doctor Profile</h2>
+        </div>
+        <div class="card-body">
+            <div class="profile-picture">
+                <!-- Insert profile picture here -->
+                <img src="usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <!-- Insert profile details here -->
+                <p><strong>Username:</strong> JohnDoe</p>
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john@example.com</p>
+                <p><strong>Specialization:</strong> Cardiology</p>
+                <p><strong>Qualification:</strong> MD, PhD</p>
+                <p><strong>Hospital:</strong> HeartCare Hospital</p>
+                <p><strong>Contact:</strong> +1 (123) 456-7890</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+
+</body>
+</html>

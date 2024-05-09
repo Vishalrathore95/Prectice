@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 5px;
+    width: 150px;
+}
+
+.btn-container {
+    display: flex;
+}
+
+button {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.result {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    
+<div>
+    <label for="">first value</label>
+     <input type="number" id="first">
+</div>
+<div>
+    <label for="">second value</label>
+        <input type="number" id="second">
+</div>
+
+   
+<div class="btn-container">
+  <button id="plus">+</button>
+    <button id="subs">-</button>
+    <button id="mult">*</button>
+    <button id="divide">/</button>
+</div>
+  <p>your result is <span class="result"></span></p>
+  <script>
+
+    let result = document.getElementById("result");
+    plus.addEventListener("click",()=>{
+        let value1 = first.value;
+        let value2 = second.value;
+        let total = +value1 + +value2 
+        result = document.querySelector(".result");
+        result.innerText = total;
+    })
+
+    subs.addEventListener("click",()=>{
+        let value1 = first.value;
+        let value2 = second.value;
+        let total = +value1 -  +value2 
+        result = document.querySelector(".result");
+        result.innerText = total;
+    })
+
+    divide .addEventListener("click",()=>{
+        let value1 = first.value;
+        let value2 = second.value;
+        let total = +value1 /  +value2 
+        result = document.querySelector(".result");
+        result.innerText = total;
+    })
+
+
+  </script>
+</body>
+
+</html>

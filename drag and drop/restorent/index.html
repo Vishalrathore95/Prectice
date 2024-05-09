@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <h2 id="heading">C<span>OO</span>KPAL</h2>
+                <ul class="utility">
+                    <li>Home</li>
+                    <li>Explore</li>
+                    <li>Help</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <p id="trad">Trending Now</p>
+            <h2>MIKE'S FAMOUS SALAD WITH CHEESE</h2>
+            <p>By John Mke</p>
+        </div>
+    </div>
+    <div class="search">
+        <label for="gsearch">Search for recipes</label><br>
+        <input type="search" id="gsearch" name="search" placeholder="search">
+        <i id="icon" class="fa-solid fa-magnifying-glass" onclick=" Search()"></i>
+        <button id="button1" onclick="all()">All recipes <i class="fa-solid fa-angle-right"></i></button>
+        <button id="button2"onclick="sortByVeg()">Veg recipes only <i class="fa-solid fa-angle-right"></i></button>
+        <button id="button3" onclick=" sortByNonVeg()">Non-veg recipes only <i class="fa-solid fa-angle-right"></i></button>
+    </div>
+    <div class="recipes">
+        <div class="card1">
+            <h1>Recipes</h1>
+            <label>Ratting</label><br>
+            <input type="checkbox" id="rattin1" name="rattin1" value="4 and above" onclick="fourOFAbove()">
+            <label for="rattin1">4 and above</label><br>
+            <input type="checkbox" id="ratting" name="ratting" value="below 4"  onclick="fourBelow()">
+            <label for="ratting">below 4</label><br>
+        </div>
+        <div class="card2" id="card2">
+           
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h2>C<span>OO</span>KPAL</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        </div>
+        <div>
+            <h2>Company</h2>
+            <ul>
+                <li>Home</li>
+                <li>Explore</li>
+                <li>Team</li>
+                <li>About us</li>
+                <li>Activity</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Resources</h2>
+            <ul>
+                <li>Blog</li>
+                <li>Use cases</li>
+                <li>Testimonials</li>
+                <li>Insights</li>
+            </ul>
+        </div>
+        <div>
+            <h2>C<span>OO</span>KPAL</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            <input type="email" placeholder="your email address" required id="email">
+            <button onclick=" validateEmail()">Subscribe</button>
+        </div>
+    </div>
+    <script src="index.js"></script> 
+</body>
+</html>

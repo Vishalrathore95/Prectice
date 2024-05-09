@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color</title>
+    <style>
+        button{
+            width: 100px;
+            height: 50px;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            font-size: 20px;
+            margin: 30px;   
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+        
+    </style>
+</head>
+<body>
+    <button id="clickMe" onclick="clicks()">click here</button>
+
+
+    <script>
+    const click = document.getElementById("clickMe");
+     const body = document.body;
+
+function clicks() {
+  const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+  body.style.background = randomColor;
+}
+    </script>
+</body>
+</html>

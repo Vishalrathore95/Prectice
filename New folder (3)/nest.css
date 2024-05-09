@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    background-color: black;
+    height: 200vh;
+    width: 100%;
+}
+
+#locationResult {
+    color: #fff;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.ipadress li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #b8bccc;
+}
+
+.location {
+    background-color: #fff;
+    width: 95%; /* Adjusted for responsiveness */
+    height: auto;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: #575a85;
+}
+
+.location h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+}
+
+#locationResult1 {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+/* .about {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+} */
+
+.about h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding: auto;
+}
+
+
+#ser {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card {
+    background-color: #575a85;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    width: 20%;
+    height: 10%;
+    margin:  30px 0 0 0;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+}
+
+/* Media queries for tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .location {
+        width: 70%;
+        height: auto; /* Changed to auto for responsiveness */
+    }
+
+    .card {
+        width: 45%; /* Adjusted width for better display */
+        height: 300px;
+        margin: 20px  0; 
+    }
+}
+
+/* Media queries for mobile */
+@media (max-width: 767px) {
+    .location {
+        width: 95%;
+        height: auto; /* Changed to auto for responsiveness */
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 95%; /* Adjusted width for better display */
+        height: 200px;
+        margin: 10px 0 0 0;
+    }
+
+    .location h1 {
+        font-size: 20px;
+    }
+}

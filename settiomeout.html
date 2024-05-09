@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Timeout</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+      }
+
+      button {
+        margin: 5px;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      p {
+        font-size: 24px;
+        margin: 10px 0;
+      }
+
+      .stick {
+        height: 150px;
+        width: 5px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      .white {
+        background-color: rgb(58, 28, 28);
+        width: 100%;
+        height: 50%;
+      }
+
+      .black {
+        background-color: black;
+        width: 100%;
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="start">Start</button>
+    <button class="end">End</button>
+    <button class="reset">Reset</button>
+    <p>
+      <span class="hour" id="hours">00</span>:
+      <span id="minutes">00</span> :
+      <span id="seconds">00</span>
+    </p>
+
+    <div class="stick">
+      <div class="black"></div>
+      <div class="white"></div>
+    </div>
+
+    <script>
+      let start = document.querySelector(".start");
+      let end = document.querySelector(".end");
+      let reset = document.querySelector(".reset");
+
+      let timerId;
+      let second = 0;
+      let minute = 0;
+      let hour = 0;
+
+      start.addEventListener("click", () => {
+        timerId = setInterval(() => {
+          second++;
+          document.querySelector('.stick').style.transform = `rotate(${second * 6}deg)`;
+
+          if (second >= 60) {
+            minute++;
+            second = 0;
+          }
+          if (minute >= 60) {
+            hour++;
+            minute = 0;
+          }
+          if (second < 10) {
+            document.getElementById('seconds').innerText = `0${second}`;
+          } else {
+            document.getElementById('seconds').innerText = second;
+          }
+          if (minute < 10) {
+            document.getElementById('minutes').innerText = `0${minute}`;
+          } else {
+            document.getElementById('minutes').innerText = minute;
+          }
+          if (hour < 10) {
+            document.getElementById('hours').innerText = `0${hour}`;
+          } else {
+            document.getElementById('hours').innerText = hour;
+          }
+        }, 1000);
+      });
+
+      end.addEventListener('click', () => {
+        clearInterval(timerId);
+      });
+
+      reset.addEventListener('click', () => {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        document.getElementById('seconds').innerText = `00`;
+        document.getElementById('minutes').innerText = `00`;
+        document.getElementById('hours').innerText = `00`;
+
+        clearInterval(timerId);
+      });
+    </script>
+  </body>
+</html>

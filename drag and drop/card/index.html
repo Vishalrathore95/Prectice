@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* .card{
+        width: 50%;
+        height: 500px;
+        margin: 0 auto;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+    } */
+     img{
+        width: 200px;
+        height: 200px;
+    }
+    </style>
+<body>
+   <div class="card">
+     
+    </div>
+    <script>
+const reviews = [
+
+  {
+    id: 1,
+    name: 'susan smith',
+    job: 'web developer',
+    img: 'https://www.course-api.com/images/people/person-1.jpeg',
+    text: "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+  },
+  {
+    id: 2,
+    name: 'anna johnson',
+    job: 'web designer',
+    img: 'https://www.course-api.com/images/people/person-2.jpeg',
+    text: 'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
+  },
+  {
+    id: 3,
+    name: 'peter jones',
+    job: 'intern',
+    img: 'https://www.course-api.com/images/people/person-4.jpeg',
+    text: 'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
+  },
+  {
+    id: 4,
+    name: 'bill anderson',
+    job: 'the boss',
+    img: 'https://www.course-api.com/images/people/person-3.jpeg',
+    text: 'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
+  },
+];
+
+const card = document.querySelector('.card');
+
+reviews.forEach((review) => {
+  const reviewCard = document.createElement('div');
+  reviewCard.classList.add('review');
+  
+  const reviewImg = document.createElement('img');
+  reviewImg.src = review.img;
+
+  const reviewContent = document.createTextNode(` id = ${review.id}, Name = ${review.name} ,Job =   ${review.job} , Text =${review.text}.`);
+
+//   const readMoreBtn = document.createElement('button');
+//   readMoreBtn.textContent = 'Read more';
+//   readMoreBtn.addEventListener('click', () => showReview(review));
+
+  reviewCard.appendChild(reviewImg);
+  reviewCard.appendChild(reviewContent);
+//   reviewCard.appendChild(readMoreBtn);
+  card.appendChild(reviewCard);
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+ 
+    <script>
+    //    let num1 =22;
+    //    let num2 =22;
+    //    if(num1>num2){
+    //     document.write("num1 is grater than num2")
+    //    }else if(num2 >num1){
+    //     document.write("num2 is grater than num1");
+
+    //    }else{
+    //     document.write("num1 and num2 are equal");
+    //    }
+
+
+    // let num1 = 3;
+    // let num2 = -7;
+    // let num3 = 2;
+    // if(num1>0 && num2>0 && num3>0){ 
+    //     alert(" The sing is +")
+    // }else if(num1>0 && num2<0 && num3<0){
+    //     alert(" The sing is -")
+    
+    // }else if( num1<0 && num2>0 && num3<0){
+    //     alert(" The sing is +")
+
+    // }else{
+    //     alert(" The sing is -")
+    // }
+
+    // for(var a =0; a<=15; a++){
+    //     if(a==0){
+    //         document.write("even" ,"<br>")
+
+    //     }else if(a%2==0){
+    //         document.write("even","<br>")
+    //     }else{
+    //         document.write("odd","<br>")
+    //     }
+    // }
+
+//     function happyNumber(num) {
+//     var m, n;
+//     var c = [];
+//     while (num !== 1 && c[num] !== true) {
+//         c[num] = true;
+//         m = 0;
+//         while (num > 0) {
+//             n = num % 10; // Fix: Changed 'n = n % 10' to 'n = num % 10'
+//             m += n * n;
+//             num = (num - n) / 10; // Fix: Changed '(num - n) / 10' to '(num - n)'
+//         }
+//         num = m;
+//     }
+//     return (num === 1);
+// }
+
+// var cnt = 5;
+// var num = 1;
+// var f5 = '';
+// while (cnt > 0) {
+//     while (!happyNumber(num))
+//         num++;
+//     f5 = f5 + (num + " ");
+//     num++;
+//     cnt--; // Fix: Decrease cnt after finding a happy number
+// }
+// document.write("first 5 numbers are " + f5);
+
+function Armstrong() {
+    var r, sum = 0, n, copy;
+    n = 153;
+    copy = n;
+    while (copy > 0) {
+        r = copy % 10;
+        sum = sum + r * r * r;
+        copy = parseInt(copy / 10);  // Fix: Update the copy variable, not n
+    }
+    if (n == sum) {
+        console.log(n + " is an Armstrong number");
+    } else {
+        console.log(n + " is not an Armstrong number");
+    }
+}
+
+
+
+    </script>
+</body>
+</html>

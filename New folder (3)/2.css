@@ -1,0 +1,143 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.first.div, .second.div {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.first.div {
+  background-color: black;
+  border-radius: 10px;
+  height: auto;
+}
+
+.first.div h1 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #575A85;
+  margin-bottom: 30px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.first.div p {
+  color: #fff;
+}
+
+.second.div {
+  background-color: #575a85;
+  border-radius: 10px;
+  height: auto;
+}
+
+.second.div h1, .second.div h3 {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.second.div h3{
+  color: #B8BCCC;
+}
+
+.second.div p {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .first.div, .second.div {
+    width: calc(50% - 15px);
+  }
+
+  .img {
+    width: 100%;
+    height: auto;
+  }
+
+  .first.div h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .second.div h1, .second.div h3 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .first.div, .second.div {
+    width: 776px;
+  }
+
+  .img {
+    width: 482px;
+    height: 462px;
+    margin-bottom: 0;
+  }
+
+  .first.div h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .second.div h1, .second.div h3 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.btn {
+ background-color: 
+ #575A85;
+  
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border:  2px solid #B8BCCC;
+  border-radius: 12px;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}

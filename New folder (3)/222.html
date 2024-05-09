@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}
+
+.nav-links:hover {
+  color: #55aaff;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+ 
+  .main-nav {
+    display: none;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background-color: #333;
+    top: 60px;
+    left: 0;
+  }
+  .main-nav li {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .main-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="navbar-toggle" id="js-navbar-toggle">
+    <i class="fas fa-bars"></i>
+  </span>
+  <a href="#" class="logo">Logo</a>
+  <ul class="main-nav" id="js-menu">
+    <li>
+      <a href="#" class="nav-links">Home</a>
+    </li>
+    <li>
+      <a href="#" class="nav-links">About Us</a>
+    </li>
+    <li>
+      <a href="#" class="nav-links">Contact Us</a>
+    </li>
+    <li>
+      <a href="#" class="nav-links">Services</a>
+    </li>
+  </ul>
+</nav>
+
+<script >
+
+const navbarToggle = document.getElementById('js-navbar-toggle');
+const menu = document.getElementById('js-menu');
+
+navbarToggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+
+</script>
+</body>
+</html>
